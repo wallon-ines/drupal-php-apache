@@ -21,7 +21,11 @@ RUN apt-get update && apt-get install -y \
         sudo \
         unzip \
         wget \
-        zlib1g-dev
+        zlib1g-dev \
+        libldb-dev \
+        libldap2-dev
+
+RUN ln -s /usr/lib/x86_64-linux-gnu/libldap.so /usr/lib/libldap.so
 
 RUN docker-php-ext-install \
         bcmath \
