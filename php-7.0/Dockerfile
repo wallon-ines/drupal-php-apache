@@ -36,6 +36,7 @@ RUN docker-php-ext-install \
         pdo_mysql \
         soap \
         zip \
+        ldap \
     && apt-get clean && apt-get autoremove -q \
     && rm -rf /var/lib/apt/lists/* /usr/share/doc /usr/share/man /tmp/* \
     && a2enmod deflate expires headers mime rewrite proxy proxy_http ssl \
