@@ -75,7 +75,8 @@ RUN docker-php-ext-install \
         && curl -sS https://getcomposer.org/installer | php \
         && chmod +x /usr/local/composer.phar \
         && ln -s /usr/local/composer.phar /usr/local/bin/composer \
-        && echo 'PATH="$HOME/.composer/vendor/bin:$PATH"' >> $HOME/.bashrc
+        && echo 'PATH="$HOME/.composer/vendor/bin:$PATH"' >> $HOME/.bashrc \
+        && echo 'export COMPOSER_ALLOW_SUPERUSER=1' >> $HOME/.bashrc
 
     # Install Drush Launcher.
     RUN wget -O drush.phar https://github.com/drush-ops/drush-launcher/releases/download/$DRUSH_LAUNCHER_VERSION/drush.phar \
